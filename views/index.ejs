@@ -7,7 +7,34 @@
     <title>Agenda</title>
 </head>
 <body>
-    <h1>Aonde ficara a Agenda atualizado </h1>
+    <h1>AGENDA</h1>
+    <table>
+        <thead>
+          <tr>
+            <th>Hora</th>
+            <th>Segunda-feira</th>
+            <th>Terça-feira</th>
+            <th>Quarta-feira</th>
+            <th>Quinta-feira</th>
+            <th>Sexta-feira</th>
+            <th>Sábado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let hour = 8; hour <= 21; hour++) { %>
+            <tr>
+              <td><%= hour %>:00</td>
+              <td><%= (hour >= 9 && hour <= 21) ? 'Disponível' : '-' %></td>
+              <td><%= (hour >= 17 && hour <= 21) ? 'Disponível' : '-' %></td>
+              <td><%= (hour >= 9 && hour <= 21) ? 'Disponível' : '-' %></td>
+              <td><%= (hour >= 15 && hour <= 21) ? 'Disponível' : '-' %></td>
+              <td><%= (hour >= 15 && hour <= 19) ? 'Disponível' : '-' %></td>
+              <td><%= (hour >= 8 && hour <= 18) ? 'Disponível' : '-' %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      
 
     <script src="script.js"></script>
 </body>
